@@ -899,6 +899,17 @@ export class DatatableComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   /**
+   * Go to specific page
+   *
+   * @param {number} [numPage=this.offset]
+   *
+   */
+  goToPage(numPage: number) : void {
+    this.offset = numPage - 1;
+    this.bodyComponent.updateOffsetY(this.offset);
+  }
+
+  /**
    * The header triggered a column resize event.
    *
    * @param {*} { column, newValue }
